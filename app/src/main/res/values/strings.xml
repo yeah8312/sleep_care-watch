@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sleep Care</string>
+    <string name="session_notification_channel_name">Sleep Care Session</string>
+    <string name="session_notification_title">Sleep Care monitoring active</string>
+    <string name="session_notification_text">Heart tracking is running for the current study session.</string>
+</resources>
+

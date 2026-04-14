@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nocturne Scholar Design System Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./design-system.css">
+    <style>
+      * { box-sizing: border-box; }
+      body { padding: 24px; }
+      main {
+        display: grid;
+        gap: 24px;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .board {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      .hero {
+        padding: 28px;
+        border-radius: 28px;
+        background: rgba(26, 28, 29, 0.72);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 18px 28px rgba(27, 36, 127, 0.08);
+      }
+      .hero p {
+        max-width: 50ch;
+        color: var(--on-surface-variant);
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .swatches {
+        display: grid;
+        gap: 10px;
+      }
+      .swatch {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 12px;
+        align-items: center;
+      }
+      .chip {
+        height: 56px;
+        border-radius: 18px;
+      }
+      .label {
+        display: grid;
+        gap: 4px;
+      }
+      .watch-shell + .watch-shell {
+        margin-top: 18px;
+      }
+      .stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .chart {
+        height: 120px;
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
+          linear-gradient(135deg, rgba(68, 216, 241, 0.14), rgba(68, 216, 241, 0));
+        position: relative;
+        overflow: hidden;
+      }
+      .chart svg {
+        position: absolute;
+        inset: 0;
+      }
+      .notes {
+        color: var(--on-surface-variant);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="row" style="justify-content: space-between;">
+          <div>
+            <div class="meta">Smartwatch Design System</div>
+            <h1 class="headline" style="font-size: 2.6rem; margin: 8px 0 10px;">Nocturne Scholar</h1>
+          </div>
+          <div class="focus-orb" aria-hidden="true"></div>
+        </div>
+        <p>
+          Editorial-scientific visuals for a sleep and drowsiness companion. The interface uses dark layered surfaces,
+          quiet metadata, glassy alerts, and a single high-impact primary action.
+        </p>
+        <div class="row">
+          <button class="cta-primary">Start Sleep</button>
+          <button class="cta-secondary">View Trend</button>
+        </div>
+      </section>
+
+      <section class="board">
+        <article class="panel">
+          <div class="meta">Color anchors</div>
+          <h2 class="headline" style="margin: 8px 0 18px;">Tonal architecture</h2>
+          <div class="swatches">
+            <div class="swatch">
+              <div class="chip" style="background: var(--surface);"></div>
+              <div class="label"><strong>surface</strong><span class="meta">#111415 base layer</span></div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: var(--surface-container-low);"></div>
+              <div class="label"><strong>surface-container-low</strong><span class="meta">#1a1c1d grouped cards</span></div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: var(--surface-container-high);"></div>
+              <div class="label"><strong>surface-container-high</strong><span class="meta">#282a2c active controls</span></div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: var(--primary-gradient);"></div>
+              <div class="label"><strong>primary gradient</strong><span class="meta">High-impact CTA texture</span></div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background: var(--tertiary);"></div>
+              <div class="label"><strong>tertiary</strong><span class="meta">#44d8f1 trend and chart accent</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="meta">Watch UI sample</div>
+          <h2 class="headline" style="margin: 8px 0 18px;">Low-noise monitoring card</h2>
+          <div class="watch-shell">
+            <div class="stat">
+              <div>
+                <div class="meta">Current score</div>
+                <div class="headline" style="font-size: 2rem;">82</div>
+              </div>
+              <div class="meta">steady</div>
+            </div>
+            <div class="panel" style="margin-top: 16px;">
+              <div class="meta">Drowsiness trend</div>
+              <div class="chart" style="margin-top: 12px;">
+                <div class="sleep-chart-fill" style="position:absolute; inset:auto 0 0 0; height:72%;"></div>
+                <svg viewBox="0 0 280 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M0 79C28 84 52 55 77 59C101 63 119 94 143 94C168 94 185 42 207 36C231 29 249 54 280 42" stroke="#44d8f1" stroke-width="5" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="alert-soft" style="margin-top: 16px;">
+              Drowsiness rising after 2 AM. Consider a recovery break.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel-recessed">
+        <div class="meta">Implementation notes</div>
+        <h2 class="headline" style="margin: 8px 0 12px;">Rules carried from Stitch</h2>
+        <div class="notes">
+          No hard 1px dividers. Use tonal shifts, gradients, and spacing for separation.
+          Favor asymmetry and large margins over dense smartwatch dashboards.
+          Use Manrope for hero and headline moments, Inter for utility text and data labels.
+          Warning states should feel like a soft alarm, not a high-saturation emergency banner.
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
